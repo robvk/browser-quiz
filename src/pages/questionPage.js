@@ -21,6 +21,14 @@ export const initQuestionPage = () => {
 
   for (const [key, answerText] of Object.entries(currentQuestion.answers)) {
     const answerElement = createAnswerElement(key, answerText);
+
+      var checkbox = document.createElement('input');
+      checkbox.type = 'radio';
+      checkbox.name = 'answer';
+    
+
+  answerElement.insertBefore(checkbox, answerElement.firstChild);
+
     answersListElement.appendChild(answerElement);
   }
 
