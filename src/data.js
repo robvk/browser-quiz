@@ -9,12 +9,13 @@
     not by your listeners
 */
 
+
 export const quizData = {
   currentQuestionIndex: 0,
   // the questions in the quiz
   questions: [
     {
-      text: 'What is the capital of France?',
+      text: 'What is the capital city of France?',
       answers: {
         a: 'Paris',
         b: 'Rome',
@@ -32,7 +33,7 @@ export const quizData = {
       ],
     },
     {
-      text: 'What is the capital of Australia?',
+      text: 'What is the capital city of Australia?',
       answers: {
         a: 'Sydney',
         b: 'Melbourne',
@@ -50,7 +51,7 @@ export const quizData = {
       ],
     },
     {
-      text: 'What is the capital of Japan?',
+      text: 'What is the capital city of Japan?',
       answers: {
         a: 'Bangkok',
         b: 'Beijing',
@@ -68,7 +69,7 @@ export const quizData = {
       ],
     },
     {
-      text: 'What is the capital of Brazil?',
+      text: 'What is the capital city of Brazil?',
       answers: {
         a: 'Brasília',
         b: 'São Paulo',
@@ -86,7 +87,7 @@ export const quizData = {
       ],
     },
     {
-      text: 'What is the capital of Canada?',
+      text: 'What is the capital city of Canada?',
       answers: {
         a: 'Toronto',
         b: 'Montreal',
@@ -104,27 +105,94 @@ export const quizData = {
       ],
     },
     {
-      text: 'What does `typeof` do?',
+      text: 'What is the capital city of Indonesia?',
       answers: {
-        a: 'changes the type of a primitive value',
-        b: 'returns a string describing the type of a value',
-        c: 'determines if a value is primitive',
-        d: 'can tell the difference between arrays and objects',
+        a: 'Jakarta',
+        b: 'Surabaya',
+        c: 'Bandung',
+        d: 'Bangkok',
+      },
+      correct: 'a',
+      selected: null,
+      links: [
+        {
+          text: 'jakarta.wikipedia',
+          href: 'https://www.worlddata.info/capital-cities.php',
+        },
+        
+      ],
+    },
+    {
+      text: 'What is the capital city of Nepal?',
+      answers: {
+        a: 'Taipei',
+        b: 'Karachi',
+        c: 'Kathmandu',
+        d: 'Dhaka',
+      },
+      correct: 'c',
+      selected: null,
+      links: [
+        {
+          text: 'kathmandu.wikipedia',
+          href: 'https://www.worlddata.info/capital-cities.php',
+        },
+        
+      ],
+    },
+    {
+      text: 'What is the capital city of Russia?',
+      answers: {
+        a: 'St. Petersburg',
+        b: 'Minsk',
+        c: 'Vilnius',
+        d: 'Moscow',
+      },
+      correct: 'd',
+      selected: null,
+      links: [
+        {
+          text: 'moscow.wikipedia',
+          href: 'https://www.worlddata.info/capital-cities.php',
+        },
+        
+      ],
+    },
+    {
+      text: 'What is the capital city of Mexico?',
+      answers: {
+        a: 'Guadalajara',
+        b: 'Monterrey',
+        c: 'Mexico City',
+        d: 'Cancun',
+      },
+      correct: 'c',
+      selected: null,
+      links: [
+        {
+          text: 'mexico_city.wikipedia',
+          href: 'https://www.worlddata.info/capital-cities.php',
+        },
+        
+      ],
+    },
+    {
+      text: 'What is the capital city of Morocco?',
+      answers: {
+        a: 'Marrakesh',
+        b: 'Rabat',
+        c: 'Casablanca',
+        d: 'Tangier',
       },
       correct: 'b',
       selected: null,
       links: [
         {
-          text: 'javascript.info',
-          href: 'https://javascript.info/types#type-typeof',
+          text: 'rabat.wikipedia',
+          href: 'https://www.worlddata.info/capital-cities.php',
         },
-        {
-          text: 'MDN',
-          href:
-            'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof',
-        },
+        
       ],
     },
-    // Add more questions here
-  ],
+  ]
 };
