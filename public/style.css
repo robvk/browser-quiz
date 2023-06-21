@@ -22,6 +22,15 @@ ul {
   list-style: none;
 }
 
+.green {
+  background-color: green;
+}
+.red {
+  background-color: red;
+}
+.alreadyClicked {
+  pointer-events: none;
+}
 body {
   background: #DAD299;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to right, #B0DAB9, #DAD299);  /* Chrome 10-25, Safari 5.1-6 */
