@@ -170,30 +170,7 @@ h1, h2 {
 }
 
 
-.question-element {
-  width: 100%;
-  
-  padding: 10px;
-  margin-bottom: 20px;
-  border-radius: 33px;
-  background: linear-gradient(45deg, #e601ff 0%, #00aff5 100% );
-  box-shadow:  35px 35px 70px #651554,
-               -35px -35px 70px #ff3ff4;
-               border-radius: 20px;
-    box-shadow: 25px 25px 75px rgb(0, 0, 0),
-    10px 50px 70px rgba(0, 0, 0, 0.692),
-      inset 5px 5px 10px rgba(245, 235, 235, 0.37),
-      inset 5px 5px 20px rgba(255, 255, 255, 0.493),
-      inset -5px -5px 15px rgba(99, 97, 97, 0.75);
-      
-}
 
-.answer-element {
-  
-  padding: 10px;
-  margin-bottom: 10px;
-  
-}
 .popup {
   width: 320px;
   height: 150px;
