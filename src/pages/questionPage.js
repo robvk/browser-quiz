@@ -46,7 +46,6 @@ const nextQuestion = () => {
 };
 
 
-
 const submitAnswer = () => {
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
   const answersListElement = document.getElementById(ANSWERS_LIST_ID);
