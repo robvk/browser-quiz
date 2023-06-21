@@ -45,7 +45,6 @@ const nextQuestion = () => {
   initQuestionPage();
 };
 
-console.log('hi');
 
 const submitAnswer = () => {
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
