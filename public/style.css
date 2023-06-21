@@ -71,7 +71,6 @@ h1, h2 {
   animation: countdown-animation 1s ease-in-out infinite;
 }
 
-
 @keyframes countdown-animation {
   0% {
     opacity: 1;
