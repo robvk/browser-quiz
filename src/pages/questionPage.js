@@ -15,6 +15,8 @@ export const initQuestionPage = () => {
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
 
   const questionElement = createQuestionElement(currentQuestion.text);
+  // added aclass list
+  questionElement.classList.add('question-element'); 
 
   userInterface.appendChild(questionElement);
 
