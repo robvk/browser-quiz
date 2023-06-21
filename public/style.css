@@ -170,8 +170,58 @@ h1, h2 {
 }
 
 
- 
 
+.popup {
+  width: 320px;
+  height: 150px;
+  font-weight: bold;
+  position: fixed;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.87);
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  background: rgba( 255, 255, 255, 0.25 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 6px );
+-webkit-backdrop-filter: blur( 6px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+font-size: 1.2rem;
+}
+
+.popup-slide-in {
+  animation-name: slideIn;
+}
+
+.popup-slide-out {
+  animation-name: slideOut;
+}
+
+@keyframes slideIn {
+  0% {
+    top: -100px;
+  }
+  100% {
+    top: 20px;
+  }
+}
+
+@keyframes slideOut {
+  0% {
+    top: 20px;
+  }
+  100% {
+    top: -100px;
+  }
+}
 
 
 
