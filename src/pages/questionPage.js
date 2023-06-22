@@ -16,7 +16,7 @@ export const initQuestionPage = () => {
 
   const showScore = document.createElement('div');
   showScore.classList.add('myScore');
-  showScore.innerHTML = `your score is: ${score}/100`;
+  showScore.innerHTML = `Your score is: ${score}/100`;
   showScore.style.color = 'black';
   userInterface.appendChild(showScore);
 
