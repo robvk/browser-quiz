@@ -53,9 +53,10 @@ const submitAnswer = () => {
   Array.from(answersListElement.children).forEach((answerElement) => {
     const radioInput = answerElement.querySelector('input[type="radio"]');
     const isSelected = radioInput.checked;
+    
+    answerElement.classList.add('alreadyClicked');
 
     if (isSelected) {
-      answerElement.classList.add('alreadyClicked');
 
       if (radioInput.value === currentQuestion.correct) {
         answerElement.classList.add('green');
