@@ -61,10 +61,11 @@ const submitAnswer = () => {
     const radioInput = answerElement.querySelector('input[type="radio"]');
     const isSelected = radioInput.checked;
     
+
     answerElement.classList.add('alreadyClicked');
 
     if (isSelected) {
-
+      
       if (radioInput.value === currentQuestion.correct) {
         answerElement.classList.add('green');
         score = score + 10;
