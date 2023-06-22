@@ -7,6 +7,7 @@ import {
 import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
+import { createScore } from '../views/scoreView.js';
 
 let score = 0;
 
@@ -14,11 +15,9 @@ export const initQuestionPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
 
-  const showScore = document.createElement('div');
-  showScore.classList.add('myScore');
-  showScore.innerHTML = `Your score is: ${score}/100`;
-  showScore.style.color = 'black';
-  userInterface.appendChild(showScore);
+
+  const scoreElement = createScore(score);
+  userInterface.prepend(scoreElement);
 
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
 
@@ -69,13 +68,13 @@ const submitAnswer = () => {
       if (radioInput.value === currentQuestion.correct) {
         answerElement.classList.add('green');
         score = score + 10;
+        createScore(score);
       } else {
         answerElement.classList.add('red');
       }
     }
   });
-  const showScore = document.querySelector('.myScore');
-  showScore.innerHTML = `Your score is: ${score}/100`;
+  
   const correctAnswer = document.querySelector(
     `input[value="${currentQuestion.correct}"]`
   );
