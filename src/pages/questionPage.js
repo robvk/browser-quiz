@@ -7,10 +7,17 @@ import {
 import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
+import { createScore } from '../views/scoreView.js';
+
+let score = 0;
 
 export const initQuestionPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
+
+
+  const scoreElement = createScore(score);
+  userInterface.prepend(scoreElement);
 
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
 
@@ -53,6 +60,7 @@ const submitAnswer = () => {
   Array.from(answersListElement.children).forEach((answerElement) => {
     const radioInput = answerElement.querySelector('input[type="radio"]');
     const isSelected = radioInput.checked;
+    
 
     answerElement.classList.add('alreadyClicked');
 
@@ -60,12 +68,14 @@ const submitAnswer = () => {
       
       if (radioInput.value === currentQuestion.correct) {
         answerElement.classList.add('green');
+        score = score + 10;
+        createScore(score);
       } else {
         answerElement.classList.add('red');
       }
     }
   });
-
+  
   const correctAnswer = document.querySelector(
     `input[value="${currentQuestion.correct}"]`
   );
