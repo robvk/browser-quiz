@@ -2,6 +2,8 @@ import { USER_INTERFACE_ID, START_QUIZ_BUTTON_ID } from '../constants.js';
 import { createWelcomeElement } from '../views/welcomeView.js';
 import { initQuestionPage } from './questionPage.js';
 
+
+let userName;
 export const initWelcomePage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
@@ -56,7 +58,7 @@ startButton.addEventListener('click', () => {
   const userNameInput = document.getElementById("userName");
 
    //get the users name 
-  const userName = userNameInput.value;
+  userName = userNameInput.value;
 
   // if the users enters a name call the countdown
   if (userName !== "") {
@@ -136,5 +138,5 @@ const countdown = () => {
 
 
 const startQuiz = () => {
-  initQuestionPage();
+  initQuestionPage({userName});
 };
