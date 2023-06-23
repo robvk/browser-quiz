@@ -8,13 +8,25 @@ import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
 import { createScore } from '../views/scoreView.js';
+import { createTimer } from '../timer.js';
 
 let score = 0;
-
+let timerObject;
 export const initQuestionPage = () => {
+  console.log("new question")
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
+ 
+   timerObject = createTimer();
 
+
+
+   const timerElement = timerObject.timerElement;
+
+
+
+  console.dir(timerElement);
+  userInterface.appendChild(timerObject);
 
   const scoreElement = createScore(score);
   userInterface.prepend(scoreElement);
@@ -22,7 +34,7 @@ export const initQuestionPage = () => {
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
 
   const questionElement = createQuestionElement(currentQuestion.text);
-  // added aclass list
+  // added a class list
   questionElement.classList.add('question-element'); 
 
   userInterface.appendChild(questionElement);
@@ -47,13 +59,16 @@ export const initQuestionPage = () => {
 };
 
 const nextQuestion = () => {
+  console.log("next question")
   quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
 
   initQuestionPage();
 };
 
 
-const submitAnswer = () => {
+export const submitAnswer = () => {
+  console.log("submit")
+  
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
   const answersListElement = document.getElementById(ANSWERS_LIST_ID);
 
@@ -80,5 +95,9 @@ const submitAnswer = () => {
     `input[value="${currentQuestion.correct}"]`
   );
   correctAnswer.parentElement.classList.add('green');
+  clearInterval(timerObject);
 
+  //stop the timer after you push submit
+  timerElement.innerHTML= "-";
+  clearInterval()
 };
