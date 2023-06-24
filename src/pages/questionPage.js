@@ -8,8 +8,10 @@ import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
 import { createScore } from '../views/scoreView.js';
+import { displayResults } from '../views/endPage.js';
 
 let score = 0;
+
 
 export const initQuestionPage = () => {
   const userInterface = document.getElementById(USER_INTERFACE_ID);
@@ -21,6 +23,7 @@ export const initQuestionPage = () => {
 
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
 
+ 
   const questionElement = createQuestionElement(currentQuestion.text);
   // added aclass list
   questionElement.classList.add('question-element'); 
@@ -48,9 +51,13 @@ export const initQuestionPage = () => {
 
 const nextQuestion = () => {
   quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
-
+ if(quizData.currentQuestionIndex === quizData.questions.length){
+ displayResults();
+ }
   initQuestionPage();
+
 };
+
 
 
 const submitAnswer = () => {
@@ -62,7 +69,7 @@ const submitAnswer = () => {
     const isSelected = radioInput.checked;
     
 
-    answerElement.classList.add('alreadyClicked');
+      answerElement.classList.add('alreadyClicked');
 
     if (isSelected) {
       
@@ -75,10 +82,10 @@ const submitAnswer = () => {
       }
     }
   });
-  
+
   const correctAnswer = document.querySelector(
     `input[value="${currentQuestion.correct}"]`
   );
   correctAnswer.parentElement.classList.add('green');
-
+  
 };
