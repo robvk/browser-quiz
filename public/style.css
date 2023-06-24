@@ -4,6 +4,22 @@
   box-sizing: border-box;
   font-family: 'Poppins' sans-serif;
 }
+#user-interface{
+  background-color: #e4eeee;
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  padding: 30px;
+  outline: 5px solid #ff00ff;
+  height: 50vh;
+ 
+}
+#user-interface:hover {
+  color: #ffffff;
+  outline: 5px solid #01d9ff;
+  box-shadow: 0px 5px 14px 4px hwb(0 38% 61%);
+}
+
+
 .centered {
   position: fixed;
   top: 50%;
@@ -32,10 +48,10 @@ ul {
   pointer-events: none;
 }
 body {
-  background: #DAD299;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #B0DAB9, #DAD299);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #B0DAB9, #DAD299); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+  background-image: url("https://kwizzbit.com/wp-content/uploads/2023/02/Capital-CIties.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   border: 2px solid transparent;
   display: flex;
   justify-content: center;
@@ -46,7 +62,8 @@ background: linear-gradient(to right, #B0DAB9, #DAD299); /* W3C, IE 10+/ Edge, F
 
 
 
-h1, h2 {
+h1 h2 {
+  font-weight: bolder;
   text-align: center;
 }
 
@@ -61,11 +78,12 @@ h1, h2 {
 
 
 .welcome-container {
-  background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100%);
+  background: linear-gradient(-45deg, #fc00ff 50%, #00dbde 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 30px;
   font-size:2rem ;
+  
 
 }
 #headerText{
@@ -106,13 +124,13 @@ h1, h2 {
   background-color: #f3f3f4;
   color: #0d0c22;
   transition: .3s ease;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
  }
  #userName:focus, input:hover {
   outline: none;
   border-color: rgba(241, 3, 95, 0.548);
   background-color: #fff;
-  box-shadow: 0 0 0 4px rgb(234 76 137 / 10%);
+  box-shadow: 0 0 0 4px rgba(243, 3, 95, 0.1);
  }
  #userName::placeholder {
   color: #5f5f9b;
@@ -185,24 +203,18 @@ h1, h2 {
   height: 150px;
   font-weight: bold;
   position: fixed;
-  top: -100px;
+  top: -155px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #fff;
+  background-color: #0f0f0f;
   padding: 40px;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.87);
   animation-duration: 1s;
-  animation-fill-mode: forwards;
-  background: rgba( 255, 255, 255, 0.25 );
-box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-backdrop-filter: blur( 6px );
--webkit-backdrop-filter: blur( 6px );
-border-radius: 10px;
-border: 1px solid rgba( 255, 255, 255, 0.18 );
-background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  animation-fill-mode:both;
+  background: rgba(95, 93, 93, 0.25);
+
+
 font-size: 1.2rem;
 }
 
