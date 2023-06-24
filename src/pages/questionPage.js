@@ -18,8 +18,9 @@ let timerObject;
 export let submitClicked = false;
 export const initQuestionPage = ({userName,scoreValue,selectedAnswer}) => {
   createStorage(user, null , score ,quizData.currentQuestionIndex);
+  
   user = userName;
-  if(scoreValue){score = scoreValue}
+  if(typeof scoreValue !== 'undefined'){score = scoreValue}
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
    
@@ -121,7 +122,7 @@ export const submitAnswer = () => {
   clearInterval(timerObject);
 
   //stop the timer after you push submit
-  timerElement.innerHTML= "-";
+  timerElement.innerHTML= " ";
   clearInterval(timer);
 } else {
   Array.from(answersListElement.children).forEach((answerElement) => {

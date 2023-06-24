@@ -138,5 +138,5 @@ const countdown = () => {
 
 
 const startQuiz = () => {
-  initQuestionPage({userName});
+  initQuestionPage({userName: userName, scoreValue : 0});
 };

@@ -50,7 +50,8 @@ import { quizData } from '../data.js';
     startOverButton.id = 'start-over';
     resultsContainer.appendChild(startOverButton);
     startOverButton.addEventListener('click', () => {
-      userName='';
+      sessionStorage.removeItem('currentUser');
+      //userName='';
       quizData.currentQuestionIndex = 0;
       initWelcomePage();
     });
