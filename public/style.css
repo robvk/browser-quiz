@@ -300,5 +300,8 @@ button {
   font-weight: bold;
 }
 
-
+.passive-button {
+  pointer-events: none;
+  opacity: 0.5;
+}
 
