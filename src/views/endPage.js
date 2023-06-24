@@ -1,4 +1,4 @@
-import { USER_INTERFACE_ID } from '../constants.js';
+import { USER_INTERFACE_ID } from "../constants.js"; 
 
  export const displayResults = (userName, score) => {
     // Create a container for the results
