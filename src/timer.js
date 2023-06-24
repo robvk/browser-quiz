@@ -12,7 +12,7 @@ export const createTimer = (item) => {
     if (!timerElement) {
         timerElement = document.createElement('div');
         timerElement.id = 'timerElement';
-        timerElement.timerElement = 'timerElement';
+        
 
         timerElement.className = 'timerElement';
     }
@@ -26,7 +26,7 @@ export const createTimer = (item) => {
         }
     
     counter--;
-    if (counter === 0) {
+    if (counter === -2) {
         clearInterval(timer);
         timerElement.textContent = "Time's up!";
         // display the correct answer
