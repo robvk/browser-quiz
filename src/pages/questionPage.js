@@ -61,7 +61,7 @@ const nextQuestion = () => {
  if(quizData.currentQuestionIndex === quizData.questions.length){
  displayResults(user, score);
  }
- initQuestionPage({userName : user});
+ else {initQuestionPage({userName : user});}
 
 };
 
