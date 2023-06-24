@@ -1,6 +1,8 @@
 import { USER_INTERFACE_ID } from "../constants.js"; 
 
  export const displayResults = (userName, score) => {
+  const userInterface = document.getElementById(USER_INTERFACE_ID);
+  userInterface.innerHTML = '';
     // Create a container for the results
     const resultsContainer = document.createElement('div');
     resultsContainer.id = 'results-container';
@@ -35,6 +37,5 @@ import { USER_INTERFACE_ID } from "../constants.js";
     resultsContainer.appendChild(messageElement);
   
     // Get the user interface element by ID and append the results container to it
-    const userInterface = document.getElementById(USER_INTERFACE_ID);
     userInterface.appendChild(resultsContainer);
   };
