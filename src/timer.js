@@ -12,7 +12,7 @@ export const createTimer = (item) => {
     if (!timerElement) {
         timerElement = document.createElement('div');
         timerElement.id = 'timerElement';
-        
+        //timerElement.timerElement = 'timerElement';
 
         timerElement.className = 'timerElement';
     }

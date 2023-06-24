@@ -73,6 +73,7 @@ const nextQuestion = () => {
   quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
   if(quizData.currentQuestionIndex === quizData.questions.length){
   displayResults(user, score);
+  return;
   }
   initQuestionPage({userName : user});
   submitClicked = false;
