@@ -9,7 +9,7 @@ import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
 import { createScore } from '../views/scoreView.js';
 import { createStorage, retrieveStorage } from './sessionStorage.js';
-
+import { displayResults } from '../views/endPage.js';
 let score = 0;
 let user;
 export const initQuestionPage = ({userName,scoreValue,selectedAnswer}) => {
@@ -58,9 +58,13 @@ export const initQuestionPage = ({userName,scoreValue,selectedAnswer}) => {
 
 const nextQuestion = () => {
   quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
+ if(quizData.currentQuestionIndex === quizData.questions.length){
+ displayResults(user, score);
+ }
+ initQuestionPage({userName : user});
 
-  initQuestionPage({userName : user});
 };
+
 
 
 const submitAnswer = () => {
@@ -72,7 +76,7 @@ const submitAnswer = () => {
     const isSelected = radioInput.checked;
     
 
-    answerElement.classList.add('alreadyClicked');
+      answerElement.classList.add('alreadyClicked');
 
     if (isSelected) {
       
@@ -84,11 +88,11 @@ const submitAnswer = () => {
         answerElement.classList.add('red');
       } 
     }
-  }); 
-  
+  });
+
   const correctAnswer = document.querySelector(
     `input[value="${currentQuestion.correct}"]`
   );
   correctAnswer.parentElement.classList.add('green');
-
+  
 };
