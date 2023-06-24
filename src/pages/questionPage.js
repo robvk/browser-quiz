@@ -8,15 +8,22 @@ import { createQuestionElement } from '../views/questionView.js';
 import { createAnswerElement } from '../views/answerView.js';
 import { quizData } from '../data.js';
 import { createScore } from '../views/scoreView.js';
+
 import { createStorage, retrieveStorage } from './sessionStorage.js';
 import { displayResults } from '../views/endPage.js';
+import { createTimer } from '../timer.js';
 let score = 0;
 let user;
+let timerObject;
 export const initQuestionPage = ({userName,scoreValue,selectedAnswer}) => {
   user = userName;
   if(scoreValue){score = scoreValue}
   const userInterface = document.getElementById(USER_INTERFACE_ID);
   userInterface.innerHTML = '';
+   timerObject = createTimer();
+   const timerElement = timerObject.timerElement;
+  userInterface.appendChild(timerObject);
+ 
   
   const scoreElement = createScore(score);
   userInterface.prepend(scoreElement);
@@ -24,7 +31,7 @@ export const initQuestionPage = ({userName,scoreValue,selectedAnswer}) => {
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
  
   const questionElement = createQuestionElement(currentQuestion.text);
-  // added aclass list
+  // added a class list
   questionElement.classList.add('question-element'); 
 
   userInterface.appendChild(questionElement);
@@ -57,6 +64,7 @@ export const initQuestionPage = ({userName,scoreValue,selectedAnswer}) => {
 };
 
 const nextQuestion = () => {
+  console.log("next question")
   quizData.currentQuestionIndex = quizData.currentQuestionIndex + 1;
  if(quizData.currentQuestionIndex === quizData.questions.length){
  displayResults(user, score);
@@ -67,7 +75,9 @@ const nextQuestion = () => {
 
 
 
-const submitAnswer = () => {
+
+export const submitAnswer = () => {
+
   const currentQuestion = quizData.questions[quizData.currentQuestionIndex];
   const answersListElement = document.getElementById(ANSWERS_LIST_ID);
 
@@ -94,5 +104,11 @@ const submitAnswer = () => {
     `input[value="${currentQuestion.correct}"]`
   );
   correctAnswer.parentElement.classList.add('green');
+
+  clearInterval(timerObject);
+
+  //stop the timer after you push submit
+  timerElement.innerHTML= "-";
+  clearInterval()
   
 };
