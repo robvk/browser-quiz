@@ -12,7 +12,7 @@ export const createTimer = (item) => {
     if (!timerElement) {
         timerElement = document.createElement('div');
         timerElement.id = 'timerElement';
-        
+    
 
         timerElement.className = 'timerElement';
     }
@@ -20,7 +20,7 @@ export const createTimer = (item) => {
     let counter = 20;
     timer = setInterval(() => {
         //stop the timer after you push submit
-        if (timerElement.innerText != "-"){
+        if (timerElement.innerText !== " "){
 
     timerElement.innerText = counter;
         }

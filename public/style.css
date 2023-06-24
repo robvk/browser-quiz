@@ -134,7 +134,7 @@ h1 h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 100px;
 }
 #startButton {
   position: relative;
@@ -320,3 +320,15 @@ button {
   opacity: 0.5;
 }
 
+.final-message{
+  margin: 33px;
+    color: white;
+    font-size: 40px;
+    width: 800px;
+}
+
+#start-over:hover {
+  background-color: #85d6dca5;
+  color: #000;
+  transition: background-color 0.5s ease;
+}
