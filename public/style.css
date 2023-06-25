@@ -300,6 +300,7 @@ button {
   color: white;
   font-size: 3rem;
   font-weight: bold;
+  height: 80px;
 }
 .myScore {
   position: relative;
